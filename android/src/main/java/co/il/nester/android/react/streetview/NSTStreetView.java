@@ -99,7 +99,7 @@ public class NSTStreetView extends StreetViewPanoramaView implements OnStreetVie
             this.panorama.setPosition(coordinate, radius);
         }
 
-       long duration = 1000;
+       long duration = 300;
        if (bearing != 0) {
              StreetViewPanoramaCamera camera = new StreetViewPanoramaCamera.Builder()
            .zoom(zoom)
@@ -138,7 +138,7 @@ public class NSTStreetView extends StreetViewPanoramaView implements OnStreetVie
         bearing = (float) pov.getDouble("bearing");
         zoom = pov.getInt("zoom");
 
-        long duration = 1000;
+        long duration = 300;
          if (bearing != 0 && this.started) {
              StreetViewPanoramaCamera camera = new StreetViewPanoramaCamera.Builder()
              .zoom(zoom)

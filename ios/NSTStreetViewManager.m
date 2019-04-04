@@ -31,6 +31,12 @@ RCT_CUSTOM_VIEW_PROPERTY(coordinate, CLLocationCoordinate, NSTStreetView) {
                     radius: radius];
 }
 
+RCT_CUSTOM_VIEW_PROPERTY(markerCoordinate, CLLocationCoordinate, NSTStreetView) {
+    if (json == nil) return;
+    GMSMarker *marker = [GMSMarker markerWithPosition:[RCTConvert CLLocationCoordinate2D:json]];
+    marker.panoramaView = view;
+}
+
 RCT_CUSTOM_VIEW_PROPERTY(heading, CLLocationDegrees, NSTStreetView) {
   if (json == nil) return;
   view.camera = [GMSPanoramaCamera cameraWithHeading:[RCTConvert CLLocationDegrees:json] pitch:0 zoom:1];
